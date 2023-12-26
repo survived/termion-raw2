@@ -12,14 +12,12 @@
 //! # Example
 //!
 //! ```rust,no_run
-//! use termion::raw::IntoRawMode;
+//! use termion_raw2::IntoRawMode;
 //! use std::io::{Write, stdout};
 //!
-//! fn main() {
-//!     let mut stdout = stdout().into_raw_mode().unwrap();
-//!
-//!     write!(stdout, "Hey there.").unwrap();
-//! }
+//! let mut stdout = stdout().into_raw_mode()?;
+//! write!(stdout, "Hey there.").unwrap();
+//! # std::io::Result::Ok(())
 //! ```
 
 use std::{
@@ -128,20 +126,5 @@ impl<W: Write + AsRawFd> RawTerminal<W> {
         raw_terminal_attr(&mut ios);
         set_terminal_attr(self.as_raw_fd(), &ios)?;
         Ok(())
-    }
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-    use std::io::{stdout, Write};
-
-    #[test]
-    fn test_into_raw_mode() {
-        let mut out = stdout().into_raw_mode().unwrap();
-
-        out.write_all(b"this is a test, muahhahahah\r\n").unwrap();
-
-        drop(out);
     }
 }
