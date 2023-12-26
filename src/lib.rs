@@ -1,5 +1,9 @@
 //! Managing raw mode.
 //!
+//! The code in this library is slightly modified version of `raw` module of [`termion`](https://docs.rs/termion)
+//! crate. Difference is that termion only supports raw mode for stdout, while this  modification
+//! supports any terminal that implements [`AsRawFd`].
+//!
 //! Raw mode is a particular state a TTY can have. It signifies that:
 //!
 //! 1. No line buffering (the input is given byte-by-byte).
