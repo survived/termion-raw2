@@ -13,7 +13,7 @@
 //!
 //! It is essential to design terminal programs.
 //!
-//! # Example
+//! ### Example
 //!
 //! ```rust,no_run
 //! use termion_raw2::IntoRawMode;

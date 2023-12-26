@@ -15,7 +15,7 @@ Raw mode is a particular state a TTY can have. It signifies that:
 
 It is essential to design terminal programs.
 
-# Example
+### Example
 
 ```rust
 use termion_raw2::IntoRawMode;
