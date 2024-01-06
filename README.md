@@ -1,3 +1,6 @@
+> Changes were merged into `termion` in [MR 187](https://gitlab.redox-os.org/redox-os/termion/-/merge_requests/187),
+> so this repo is archived
+
 <!-- cargo-rdme start -->
 
 Managing raw mode.
